@@ -1,0 +1,1 @@
+export const backendURL = 'https://thread-api-six.vercel.app';
