@@ -16,6 +16,15 @@ app.use(morgan("dev"));
 app.use('/api/user', userRoutes);
 app.use('/api/post', postRoutes);
 
+app.get('/', async (req, res) => {
+    try {
+        return res.status(200).json({ message: "API is running successfully", success: true });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: "Internal Server Error", success: false });
+    };
+})
+
 app.listen(8080, (req, res) => {
     console.log(`Server is running on PORT 8080`);
 });
