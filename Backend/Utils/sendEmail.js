@@ -12,7 +12,7 @@ const sendVerificationMail = async (email, verificationToken) => {
         from: "agarwalshaan27@gmail.com",
         to: email,
         subject: 'Email Verification',
-        text: `http://localhost:8080/api/user/verify/${verificationToken}`,
+        text: `https://thread-api-six.vercel.app/api/user/verify/${verificationToken}`,
     };
     try {
         await transporter.sendMail(mailOptions);
