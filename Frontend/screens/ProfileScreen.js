@@ -29,7 +29,6 @@ const ProfileScreen = () => {
   }
   const clearAuthToken = async () => {
       await AsyncStorage.removeItem("authToken");
-      console.log("Cleared auth token");
       navigation.replace("Login")
   }
 

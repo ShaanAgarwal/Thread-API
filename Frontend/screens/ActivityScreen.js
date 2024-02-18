@@ -28,8 +28,7 @@ const ActivityScreen = () => {
         const decodedToken = jwt_decode(token);
         const userId = decodedToken.userId;
         setUserId(userId);
-  
-        const response = await axios.get(`http://localhost:8080/api/user/users/${userId}`);
+        const response = await axios.get(`${backendURL}/api/user/users/${userId}`);
         setUsers(response.data.users);
       } catch (error) {
         console.error("Error fetching users:", error);
@@ -39,7 +38,6 @@ const ActivityScreen = () => {
   
     fetchUsers();
   }, []);  
-  console.log("users", users);
   return (
     <ScrollView style={{ marginTop: 50 }}>
       <View style={{ padding: 10 }}>

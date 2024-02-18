@@ -47,7 +47,6 @@ const LoginScreen = () => {
     axios
       .post(`${backendURL}/api/user/login`, user)
       .then((response) => {
-        console.log(response);
         const token = response.data.token;
         AsyncStorage.setItem("authToken", token);
         navigation.navigate("Main");

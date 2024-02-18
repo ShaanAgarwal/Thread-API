@@ -41,8 +41,7 @@ const HomeScreen = () => {
       console.log("error fetching posts", error);
     }
   };
-
-  console.log("posts", posts);
+  
   const handleLike = async (postId) => {
     try {
       const response = await axios.put(`${backendURL}/api/post/posts/${postId}/${userId}/like`);
@@ -61,7 +60,6 @@ const HomeScreen = () => {
   const handleDislike = async (postId) => {
     try {
       const response = await axios.put(`${backendURL}/api/post/posts/${postId}/${userId}/unlike`);
-      console.log(response);
       const updatedPost = response.data;
       // Update the posts array with the updated post
       const updatedPosts = posts.map((post) =>
